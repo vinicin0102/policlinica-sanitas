@@ -55,8 +55,8 @@ Lambaré» cae en `especialidades/ginecologia-obstetricia/index.html` y ve de
 entrada a la profesional, los motivos de consulta, los estudios relacionados y
 el WhatsApp.
 
-Hoy existen seis: ginecología y obstetricia, traumatología, medicina familiar,
-pediatría, psicología y nutrición.
+Hoy existen siete: ginecología y obstetricia, traumatología, medicina familiar,
+pediatría, psicología, cardiología y nutrición.
 
 ## Editar el contenido
 
@@ -82,7 +82,8 @@ la gente reconoce ese canal.
 
 ## Profesionales
 
-Los seis retratos están cargados, **identificados sólo por especialidad**: la
+Seis de los siete retratos están cargados, **identificados sólo por
+especialidad**: la
 policlínica todavía no envió nombres ni registros profesionales, y no se
 inventa ninguno. Cuando lleguen, se agregan en `PROFESIONALES`:
 
@@ -111,10 +112,13 @@ cambiá `LAT` y `LNG` en `tools/build.py` y volvé a generar.
 
 ## Lo que falta
 
-- Nombres y registros profesionales de los seis profesionales.
+- Nombres y registros profesionales de los siete profesionales.
 - Días y horarios de atención de cada uno.
+- **El retrato del cardiólogo.** La tarjeta y la página de cardiología ya
+  existen y funcionan con la composición de marca; en cuanto haya una foto
+  real, se agrega `foto=` a su entrada en `PROFESIONALES`.
+  `fotos/cardiologista.jpg` no se usa: es una imagen de banco, no del
+  profesional que atiende en la policlínica.
 - Las fotos del local (ver `fotos/README.md`).
 - Confirmar si «Clínica General» y «Medicina Familiar» son la misma área:
   hoy figuran unificadas en una sola tarjeta.
-- Cardiología aparece entre las especialidades pero no tiene profesional
-  asignado ni página propia.

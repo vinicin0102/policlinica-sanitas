@@ -68,6 +68,15 @@ PROFESIONALES = [
                   'Dificultades escolares', 'Motricidad fina',
                   'Recuperación cognitiva en adultos mayores'],
          estudios=[]),
+    dict(slug='cardiologia', esp='Cardiología',
+         foto=None,
+         titulo='Cardiólogo en Lambaré',
+         intro='Control de presión, palpitaciones y estudios del corazón, en la Policlínica Sanitas.',
+         icono='i-heart',
+         motivos=['Control de presión alta', 'Palpitaciones',
+                  'Control del corazón', 'Electrocardiograma',
+                  'Ecocardiograma', 'Seguimiento de un estudio previo'],
+         estudios=['Electrocardiograma', 'Ecocardiograma']),
     dict(slug='nutricion', esp='Nutrición',
          foto='fotos/equipo/nutricion.jpeg',
          titulo='Nutricionista en Lambaré',
@@ -85,7 +94,7 @@ ESPECIALIDADES = [
     ('i-smile',   'Pediatría',                 'Crecimiento, fiebre, cuadros respiratorios y controles de tu hijo.', 'pediatria'),
     ('i-mind',    'Psicología',                'Ansiedad, estrés, depresión y apoyo psicológico para niños y adultos.', 'psicologia'),
     ('i-apple',   'Nutrición',                 'Alimentación, control de peso y orientación para distintas etapas.', 'nutricion'),
-    ('i-heart',   'Cardiología',               'Presión alta, palpitaciones, control del corazón y electrocardiograma.', None),
+    ('i-heart',   'Cardiología',               'Presión alta, palpitaciones, control del corazón y electrocardiograma.', 'cardiologia'),
 ]
 
 ESTUDIOS = [
@@ -402,12 +411,14 @@ def cierre(base, extra_ld=''):
 # ------------------------------------------------------------ profesionales ----
 def tarjeta_pro(p, base='', delay=0):
     motivos = '\n'.join(f'          <li>{e(m)}</li>' for m in p['motivos'][:5])
+    foto = ('          <img class="photo-img" src="%s%s" alt="Profesional de %s de la Policlínica Sanitas"\n'
+            '               loading="lazy" decoding="async" width="600" height="660" onerror="this.remove()">'
+            % (base, p['foto'], e(p['esp']))) if p.get('foto') else ''
     enlace = wa('quiero consultar disponibilidad de %s en la Policlínica Sanitas.' % p['esp'])
     return f'''      <article class="pro-card" data-reveal style="--d:{delay}ms">
         <div class="pro-photo">
-          <span class="pro-ph"><svg aria-hidden="true"><use href="#i-user"/></svg></span>
-          <img class="photo-img" src="{base}{p['foto']}" alt="Profesional de {e(p['esp'])} de la Policlínica Sanitas"
-               loading="lazy" decoding="async" width="600" height="660" onerror="this.remove()">
+          <span class="pro-ph"><svg aria-hidden="true"><use href="#{p.get('icono','i-user')}"/></svg></span>
+{foto}
         </div>
         <div class="pro-body">
           <h3>{e(p['esp'])}</h3>
@@ -421,6 +432,7 @@ def tarjeta_pro(p, base='', delay=0):
 
 def seccion_profesionales(base=''):
     cards = '\n'.join(tarjeta_pro(p, base, i*70) for i, p in enumerate(PROFESIONALES))
+    orientacion = wa('no sé con qué profesional tengo que consultar. Necesito orientación en la Policlínica Sanitas.')
     return f'''
 <section class="sec" id="profesionales">
   <div class="wrap">
@@ -431,6 +443,16 @@ def seccion_profesionales(base=''):
     </div>
     <div class="grid pro-grid">
 {cards}
+      <article class="pro-card" data-reveal style="--d:{len(PROFESIONALES)*70}ms;background:linear-gradient(160deg,var(--red-700),var(--red-950));border-color:transparent">
+        <div class="pro-body" style="justify-content:center;padding:32px 26px">
+          <span class="itile" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.2);color:#fff;margin-bottom:18px"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg></span>
+          <h3 style="color:#fff">¿No sabés con quién consultar?</h3>
+          <p style="color:rgba(250,236,238,.84);font-size:.92rem;margin-top:8px">Contanos qué te pasa y te decimos qué profesional puede evaluar tu caso.</p>
+          <a class="btn btn--wa btn--block" style="margin-top:auto" href="{orientacion}" target="_blank" rel="noopener">
+            <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Escribir por WhatsApp
+          </a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -755,6 +777,9 @@ def seccion_galeria(base=''):
 # --------------------------------------------------- páginas por especialidad ----
 def pagina_especialidad(p):
     base = '../../'
+    foto_hero = ('        <img class="photo-img" src="%s%s" alt="Profesional de %s de la Policlínica Sanitas"\n'
+                 '             width="600" height="660" decoding="async" onerror="this.remove()">'
+                 % (base, p['foto'], e(p['esp']))) if p.get('foto') else ''
     motivos = '\n'.join(
         f'''      <a class="motivo" data-reveal style="--d:{i*50}ms" href="{wa('quiero consultar por %s. Mi caso es: %s.' % (p['esp'], m.lower()))}" target="_blank" rel="noopener">
         <span class="b"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span> {e(m)}
@@ -807,9 +832,8 @@ def pagina_especialidad(p):
     </div>
     <div data-reveal style="--d:140ms">
       <div class="pro-hero">
-        <span class="pro-ph"><svg aria-hidden="true"><use href="#i-user"/></svg></span>
-        <img class="photo-img" src="{base}{p['foto']}" alt="Profesional de {e(p['esp'])} de la Policlínica Sanitas"
-             width="600" height="660" decoding="async" onerror="this.remove()">
+        <span class="pro-ph"><svg aria-hidden="true"><use href="#{p.get('icono','i-user')}"/></svg></span>
+{foto_hero}
         <div class="tag-esp">
           <b>{e(p['esp'])}</b>
           <span>Atiende en la Policlínica Sanitas, Lambaré</span>
