@@ -82,8 +82,7 @@ la gente reconoce ese canal.
 
 ## Profesionales
 
-Seis de los siete retratos están cargados, **identificados sólo por
-especialidad**: la
+Los siete retratos están cargados, **identificados sólo por especialidad**: la
 policlínica todavía no envió nombres ni registros profesionales, y no se
 inventa ninguno. Cuando lleguen, se agregan en `PROFESIONALES`:
 
@@ -114,11 +113,9 @@ cambiá `LAT` y `LNG` en `tools/build.py` y volvé a generar.
 
 - Nombres y registros profesionales de los siete profesionales.
 - Días y horarios de atención de cada uno.
-- **El retrato del cardiólogo.** La tarjeta y la página de cardiología ya
-  existen y funcionan con la composición de marca; en cuanto haya una foto
-  real, se agrega `foto=` a su entrada en `PROFESIONALES`.
-  `fotos/cardiologista.jpg` no se usa: es una imagen de banco, no del
-  profesional que atiende en la policlínica.
+- Confirmar con la policlínica que el retrato de cardiología
+  (`fotos/equipo/cardiologia.jpg`) corresponde al profesional que atiende
+  ahí y que se puede publicar.
 - Las fotos del local (ver `fotos/README.md`).
 - Confirmar si «Clínica General» y «Medicina Familiar» son la misma área:
   hoy figuran unificadas en una sola tarjeta.

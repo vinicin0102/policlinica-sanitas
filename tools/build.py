@@ -69,7 +69,7 @@ PROFESIONALES = [
                   'Recuperación cognitiva en adultos mayores'],
          estudios=[]),
     dict(slug='cardiologia', esp='Cardiología',
-         foto=None,
+         foto='fotos/equipo/cardiologia.jpg',
          titulo='Cardiólogo en Lambaré',
          intro='Control de presión, palpitaciones y estudios del corazón, en la Policlínica Sanitas.',
          icono='i-heart',
