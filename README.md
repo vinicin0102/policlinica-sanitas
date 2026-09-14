@@ -35,8 +35,8 @@ Para cambiar el número, reemplazá `595982420735` en todo el archivo.
 
 ## Identidad
 
-Rojo Sanitas sobre blanco. La paleta vive en el bloque `:root` de
-`index.html`: `--red-600` (#C41E33) es el color de marca, `--red-900` y
+Rojo Sanitas sobre blanco, tomado del propio logo (#86151B). La paleta vive
+en el bloque `:root` de `index.html`: `--red-700` es ese rojo, `--red-900` y
 `--red-950` sostienen las franjas oscuras, y los neutros están sesgados hacia
 el rojo para que nada se vea gris de catálogo. El grafito (`--graphite`)
 aporta variedad sin ensuciar la marca.
@@ -55,25 +55,38 @@ existe, el `<img>` se retira solo y queda la composición — la página nunca
 muestra un ícono roto.
 
 Los nombres de archivo, qué mostrar en cada uno y los tamaños sugeridos están
-en **`fotos/README.md`**. Son 10 imágenes: 5 de la galería «Conocé la
-policlínica», 1 de la sección «Sobre Sanitas» y 4 de «Etapas de la vida».
+en **`fotos/README.md`**.
+
+**Ya cargadas:** el logo (`fotos/logo.jpeg`, usado en el header y el footer) y
+los 6 retratos del equipo en `fotos/equipo/`.
+
+**Faltan 10:** las 5 de la galería «Conocé la policlínica», la de «Sobre
+Sanitas» y las 4 de «Etapas de la vida». Mientras no exista `fotos/fachada.jpg`
+la sección «Conocé la policlínica» se oculta sola, para que el visitante nunca
+vea una fila de recuadros vacíos.
 
 **No usar bancos de imágenes** para pasar fotos de desconocidos por el local o
 por el equipo.
 
 ## Profesionales
 
-No se cargó ningún nombre, retrato ni registro profesional porque esa
-información no fue provista. La sección muestra un bloque institucional y, en
-cuanto se complete el array `SANITAS_PROFESIONALES` de `index.html`, lo
-reemplaza por una grilla de tarjetas con foto, nombre, especialidad, registro,
-formación y un WhatsApp que ya menciona a ese profesional:
+Los 6 retratos ya están cargados en el array `SANITAS_PROFESIONALES` de
+`index.html`, **identificados sólo por especialidad**: la policlínica todavía
+no envió nombres ni registros profesionales, y no se inventa ninguno. Cuando
+lleguen, se agregan al mismo array y la tarjeta pasa a mostrar el nombre como
+título, la especialidad debajo y el registro en la línea de apoyo. El WhatsApp
+de cada tarjeta se adapta solo:
 
 ```js
 window.SANITAS_PROFESIONALES = [
-  { foto:'fotos/equipo/ana-gimenez.jpg', nombre:'Dra. Ana Giménez',
-    especialidad:'Ginecología y Obstetricia', registro:'Reg. Prof. 12345',
-    formacion:'Universidad Nacional de Asunción' }
+  // hoy: sólo especialidad
+  { foto:'fotos/equipo/ginecologia-obstetricia.jpeg',
+    especialidad:'Ginecología y Obstetricia' },
+
+  // cuando lleguen los datos:
+  { foto:'fotos/equipo/ginecologia-obstetricia.jpeg',
+    nombre:'Dra. [Nombre]', especialidad:'Ginecología y Obstetricia',
+    registro:'Reg. Prof. [número]', formacion:'[Formación]' }
 ];
 ```
 

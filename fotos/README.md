@@ -4,6 +4,16 @@ Subí las imágenes con **exactamente estos nombres**. La página las toma sola:
 si un archivo no existe todavía, queda la composición de marca en su lugar y
 nada se rompe.
 
+## Estado
+
+| | |
+|---|---|
+| ✅ `logo.jpeg` | En el header y el footer |
+| ✅ `equipo/` (6 retratos) | En la sección del equipo |
+| ⬜ Galería de la policlínica | 5 fotos — la sección se oculta hasta que exista `fachada.jpg` |
+| ⬜ `recepcion.jpg` | Sección «Sobre Sanitas» |
+| ⬜ `etapas/` | 4 fotos |
+
 ## Galería «Conocé la policlínica»
 
 | Archivo | Qué mostrar | Tamaño sugerido |
@@ -31,10 +41,16 @@ nada se rompe.
 
 ## Profesionales → `fotos/equipo/`
 
-Retratos verticales, recorte 1:1.1 (por ejemplo 600 × 660), fondo limpio y
-encuadre parejo entre todos. El nombre del archivo lo elegís vos: se declara
-en el array `SANITAS_PROFESIONALES` dentro de `index.html`, junto al nombre,
-la especialidad y el registro profesional de cada uno.
+Ya cargados: `ginecologia-obstetricia.jpeg`, `traumatologia.jpeg`,
+`medicina-familiar.jpeg`, `pediatria.jpeg`, `psicologia.jpeg` y
+`nutricion.jpeg`.
+
+Se declaran en el array `SANITAS_PROFESIONALES` dentro de `index.html`. Hoy
+sólo tienen especialidad; falta agregar nombre y registro profesional de cada
+uno cuando la policlínica los envíe.
+
+Para sumar retratos nuevos: verticales, recorte 1:1.1 (por ejemplo 600 × 660),
+fondo limpio y encuadre parejo entre todos.
 
 ## Recomendaciones
 

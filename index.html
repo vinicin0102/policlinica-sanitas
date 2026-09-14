@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Policlínica Sanitas | Atención Médica en Lambaré</title>
 <meta name="description" content="Policlínica Sanitas en Lambaré, Paraguay. Atención médica, ginecología, pediatría, cardiología, psicología, nutrición, traumatología, laboratorio y más. Agendá tu consulta.">
-<meta name="theme-color" content="#C41E33">
+<meta name="theme-color" content="#9E1A21">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://policlinicasanitas.com.py/">
 
@@ -33,11 +33,11 @@
   /* neutros cálidos, sesgados hacia el rojo de marca */
   --ink:#1B1416; --ink-soft:#4D3D41; --muted:#8B767B;
   /* rojo Sanitas */
-  --red-950:#3A070F; --red-900:#5C0D18; --red-800:#7D1220;
-  --red-700:#A0172A; --red-600:#C41E33; --red-500:#DC2B41;
-  --red-300:#F08C9A; --red-200:#F8C2CA;
-  --rose-50:#FDF5F6; --rose-100:#FAE3E7;
-  --accent:#C41E33;
+  --red-950:#2B0609; --red-900:#4A0C11; --red-800:#661017;
+  --red-700:#86151B; --red-600:#9E1A21; --red-500:#BE2730;
+  --red-300:#E28D93; --red-200:#F2C4C8;
+  --rose-50:#FDF6F6; --rose-100:#F9E5E7;
+  --accent:#86151B;
   /* grafito de apoyo: variedad sin ensuciar la marca */
   --graphite:#3A2F33; --graphite-900:#241C1F; --graphite-50:#F6F2F3;
   /* verde sólo semántico: confirmaciones */
@@ -48,7 +48,7 @@
   --r-sm:12px; --r:18px; --r-lg:26px; --r-xl:34px;
   --sh-1:0 1px 2px rgba(45,18,24,.05), 0 10px 26px -14px rgba(45,18,24,.20);
   --sh-2:0 2px 6px rgba(45,18,24,.06), 0 26px 50px -26px rgba(45,18,24,.30);
-  --sh-3:0 46px 90px -36px rgba(92,13,24,.42);
+  --sh-3:0 46px 90px -36px rgba(74,12,17,.42);
   --maxw:1180px; --nav-h:84px;
   --ease:cubic-bezier(.22,1,.36,1);
 }
@@ -107,8 +107,8 @@ h3{font-size:clamp(1.08rem,1.5vw,1.24rem); letter-spacing:-.022em; font-weight:7
 .btn:active{transform:translateY(0)}
 .btn--wa{background:linear-gradient(160deg,var(--wa) 0%,var(--wa-700) 100%); color:#fff; box-shadow:0 10px 26px -10px rgba(37,211,102,.75)}
 .btn--wa:hover{box-shadow:0 16px 34px -12px rgba(37,211,102,.85)}
-.btn--brand{background:linear-gradient(160deg,var(--red-600),var(--red-800)); color:#fff; box-shadow:0 12px 30px -14px rgba(124,18,32,.85)}
-.btn--brand:hover{box-shadow:0 18px 38px -16px rgba(124,18,32,.95)}
+.btn--brand{background:linear-gradient(160deg,var(--red-600),var(--red-800)); color:#fff; box-shadow:0 12px 30px -14px rgba(102,16,23,.85)}
+.btn--brand:hover{box-shadow:0 18px 38px -16px rgba(102,16,23,.95)}
 .btn--ghost{background:#fff; color:var(--red-800); border-color:var(--line)}
 .btn--ghost:hover{border-color:var(--red-300); background:var(--rose-50)}
 .btn--light{background:#fff; color:var(--red-800); box-shadow:0 14px 34px -14px rgba(26,17,19,.6)}
@@ -130,7 +130,7 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 }
 .itile .ico{width:25px; height:25px}
 .itile--soft{background:linear-gradient(150deg,var(--graphite-50),#fff); color:var(--graphite)}
-.itile--accent{background:linear-gradient(160deg,var(--red-600),var(--red-800)); color:#fff; border-color:transparent; box-shadow:0 10px 22px -14px rgba(124,18,32,.9)}
+.itile--accent{background:linear-gradient(160deg,var(--red-600),var(--red-800)); color:#fff; border-color:transparent; box-shadow:0 10px 22px -14px rgba(102,16,23,.9)}
 .itile--dark{background:linear-gradient(150deg,var(--graphite),var(--graphite-900)); color:#fff; border-color:transparent}
 
 /* ---------- cards ---------- */
@@ -141,7 +141,7 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 }
 .card::after{
   content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:0;
-  background:radial-gradient(420px 180px at 12% -10%, rgba(196,30,51,.10), transparent 70%);
+  background:radial-gradient(420px 180px at 12% -10%, rgba(134,21,27,.10), transparent 70%);
   transition:opacity .4s;
 }
 .card:hover{transform:translateY(-6px); box-shadow:var(--sh-2); border-color:var(--red-200)}
@@ -167,9 +167,9 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 .hdr .wrap{display:flex; align-items:center; justify-content:space-between; gap:18px}
 .logo{display:flex; align-items:center; gap:11px; font-family:Manrope,sans-serif; font-weight:800; letter-spacing:-.03em}
 .logo-mark{
-  width:38px; height:38px; border-radius:11px; display:grid; place-items:center; flex:none;
-  background:linear-gradient(150deg,var(--red-700),var(--red-950));
-  box-shadow:0 8px 18px -10px rgba(92,13,24,.9), inset 0 1px 0 rgba(255,255,255,.25);
+  width:40px; height:40px; border-radius:12px; flex:none; object-fit:cover; display:block;
+  background:var(--red-700);
+  box-shadow:0 8px 18px -10px rgba(74,12,17,.9);
   transition:transform .35s var(--ease);
 }
 .logo:hover .logo-mark{transform:rotate(-6deg) scale(1.05)}
@@ -208,13 +208,13 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 .hero::before{
   content:""; position:absolute; inset:-20% -10% auto -10%; height:120%; z-index:-2;
   background:
-    radial-gradient(58% 46% at 78% 18%, rgba(196,30,51,.16), transparent 68%),
+    radial-gradient(58% 46% at 78% 18%, rgba(134,21,27,.16), transparent 68%),
     radial-gradient(42% 38% at 12% 6%, rgba(58,47,51,.10), transparent 70%),
     linear-gradient(180deg,#FFFCFC 0%,#fff 72%);
 }
 .hero::after{
   content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.5;
-  background-image:radial-gradient(rgba(160,23,42,.13) 1px, transparent 1px);
+  background-image:radial-gradient(rgba(134,21,27,.13) 1px, transparent 1px);
   background-size:26px 26px;
   -webkit-mask-image:radial-gradient(60% 55% at 50% 30%, #000, transparent 72%);
   mask-image:radial-gradient(60% 55% at 50% 30%, #000, transparent 72%);
@@ -232,7 +232,7 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 .hero h1{margin:22px 0 20px}
 .hero h1 .u{
   -webkit-box-decoration-break:clone; box-decoration-break:clone;
-  background-image:linear-gradient(90deg,rgba(196,30,51,.30),rgba(240,140,154,.55));
+  background-image:linear-gradient(90deg,rgba(134,21,27,.30),rgba(226,141,147,.55));
   background-repeat:no-repeat; background-position:0 88%; background-size:0 .18em;
   animation:swipe .9s .5s var(--ease) forwards;
 }
@@ -249,21 +249,21 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 .scene-in{position:absolute; inset:0; transform-style:preserve-3d; transition:transform .9s var(--ease); will-change:transform}
 .glow{
   position:absolute; left:50%; top:47%; width:78%; aspect-ratio:1; transform:translate(-50%,-50%);
-  background:radial-gradient(circle at 50% 45%, rgba(196,30,51,.30), rgba(196,30,51,.07) 52%, transparent 70%);
+  background:radial-gradient(circle at 50% 45%, rgba(134,21,27,.30), rgba(134,21,27,.07) 52%, transparent 70%);
   filter:blur(8px);
 }
 .ring{
-  position:absolute; left:50%; top:46%; border-radius:50%; border:1.5px solid rgba(160,23,42,.30);
+  position:absolute; left:50%; top:46%; border-radius:50%; border:1.5px solid rgba(134,21,27,.30);
   transform-style:preserve-3d;
 }
 .ring i{
   position:absolute; width:10px; height:10px; border-radius:50%; top:-5px; left:calc(50% - 5px);
   background:radial-gradient(circle at 35% 30%, #fff, var(--red-500));
-  box-shadow:0 0 14px rgba(196,30,51,.9);
+  box-shadow:0 0 14px rgba(134,21,27,.9);
 }
 .ring--a{width:92%; aspect-ratio:1; transform:translate(-50%,-50%) rotateX(74deg); animation:spinZ 28s linear infinite}
-.ring--b{width:72%; aspect-ratio:1; border-color:rgba(196,30,51,.30); transform:translate(-50%,-50%) rotateX(74deg) rotateY(28deg); animation:spinZ 20s linear infinite reverse}
-.ring--c{width:110%; aspect-ratio:1; border-style:dashed; border-color:rgba(160,23,42,.14); transform:translate(-50%,-50%) rotateX(78deg); animation:spinZ 46s linear infinite}
+.ring--b{width:72%; aspect-ratio:1; border-color:rgba(134,21,27,.30); transform:translate(-50%,-50%) rotateX(74deg) rotateY(28deg); animation:spinZ 20s linear infinite reverse}
+.ring--c{width:110%; aspect-ratio:1; border-style:dashed; border-color:rgba(134,21,27,.14); transform:translate(-50%,-50%) rotateX(78deg); animation:spinZ 46s linear infinite}
 @keyframes spinZ{to{transform:translate(-50%,-50%) rotateX(74deg) rotateZ(360deg)}}
 .ring--b{animation-name:spinZb}
 @keyframes spinZb{from{transform:translate(-50%,-50%) rotateX(74deg) rotateY(28deg) rotateZ(0)}to{transform:translate(-50%,-50%) rotateX(74deg) rotateY(28deg) rotateZ(360deg)}}
@@ -272,20 +272,20 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 
 .pedestal{
   position:absolute; left:50%; top:58%; width:56%; aspect-ratio:2.6/1; transform:translate(-50%,-50%) rotateX(74deg);
-  border-radius:50%; background:radial-gradient(ellipse at 50% 50%, rgba(92,13,24,.22), transparent 66%); filter:blur(10px);
+  border-radius:50%; background:radial-gradient(ellipse at 50% 50%, rgba(74,12,17,.22), transparent 66%); filter:blur(10px);
 }
 .heart-wrap{
   position:absolute; left:50%; top:40%; width:42%; transform:translate(-50%,-50%) translateZ(80px);
   animation:bob 7s ease-in-out infinite; transform-style:preserve-3d;
 }
 @keyframes bob{0%,100%{transform:translate(-50%,-50%) translateZ(80px) translateY(0)}50%{transform:translate(-50%,-50%) translateZ(80px) translateY(-14px)}}
-.heart-wrap svg{filter:drop-shadow(0 26px 34px rgba(124,18,32,.35)); animation:beat 2.4s ease-in-out infinite}
+.heart-wrap svg{filter:drop-shadow(0 26px 34px rgba(102,16,23,.35)); animation:beat 2.4s ease-in-out infinite}
 @keyframes beat{0%,72%,100%{transform:scale(1)}12%{transform:scale(1.055)}24%{transform:scale(.99)}34%{transform:scale(1.035)}}
 
 .ecg-card{
   position:absolute; left:50%; top:72%; width:58%; transform:translate(-50%,-50%) translateZ(34px) rotateX(6deg);
   background:rgba(255,255,255,.78); border:1px solid rgba(255,255,255,.9); border-radius:20px;
-  box-shadow:0 30px 60px -30px rgba(92,13,24,.55), inset 0 1px 0 #fff;
+  box-shadow:0 30px 60px -30px rgba(74,12,17,.55), inset 0 1px 0 #fff;
   backdrop-filter:blur(14px) saturate(1.3); -webkit-backdrop-filter:blur(14px) saturate(1.3);
   padding:14px 18px; animation:bob2 9s ease-in-out infinite;
 }
@@ -302,7 +302,7 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 .chip3d{
   position:absolute; display:flex; align-items:center; gap:10px; padding:11px 16px 11px 11px; border-radius:16px;
   background:rgba(255,255,255,.84); border:1px solid rgba(255,255,255,.95);
-  box-shadow:0 24px 46px -26px rgba(92,13,24,.55), 0 1px 0 rgba(255,255,255,.9) inset;
+  box-shadow:0 24px 46px -26px rgba(74,12,17,.55), 0 1px 0 rgba(255,255,255,.9) inset;
   backdrop-filter:blur(14px) saturate(1.4); -webkit-backdrop-filter:blur(14px) saturate(1.4);
   font-family:Manrope,sans-serif; font-weight:700; font-size:.815rem; color:var(--red-950); white-space:nowrap;
 }
@@ -341,8 +341,8 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 .media-frame .ph::before{
   content:""; position:absolute; inset:-30%;
   background:
-    radial-gradient(38% 34% at 26% 22%, rgba(196,30,51,.55), transparent 70%),
-    radial-gradient(34% 30% at 78% 74%, rgba(196,30,51,.42), transparent 72%);
+    radial-gradient(38% 34% at 26% 22%, rgba(134,21,27,.55), transparent 70%),
+    radial-gradient(34% 30% at 78% 74%, rgba(134,21,27,.42), transparent 72%);
 }
 .media-frame .ph .grid-lines{position:absolute; inset:0; opacity:.22;
   background-image:linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
@@ -351,7 +351,7 @@ svg{fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stro
 .media-frame .ph .emblem{position:relative; width:40%; color:rgba(255,255,255,.92); filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
 .float-card{
   position:absolute; background:rgba(255,255,255,.86); border:1px solid rgba(255,255,255,.95); border-radius:20px;
-  padding:16px 20px; box-shadow:0 30px 60px -30px rgba(92,13,24,.6); backdrop-filter:blur(16px) saturate(1.4);
+  padding:16px 20px; box-shadow:0 30px 60px -30px rgba(74,12,17,.6); backdrop-filter:blur(16px) saturate(1.4);
   -webkit-backdrop-filter:blur(16px) saturate(1.4);
 }
 .float-card b{font-family:Manrope,sans-serif; font-size:1.5rem; display:block; letter-spacing:-.03em; line-height:1.1; color:var(--red-900)}
@@ -375,7 +375,7 @@ ul.checklist{padding:0; margin-left:0}
 .gal-ph{position:absolute; inset:0; display:grid; place-items:center; color:rgba(255,255,255,.9)}
 .gal-ph::before{content:""; position:absolute; inset:0; background:linear-gradient(150deg,var(--red-700),var(--red-950))}
 .gal-item:nth-child(2) .gal-ph::before{background:linear-gradient(150deg,#4A3A3F,#1F1518)}
-.gal-item:nth-child(3) .gal-ph::before{background:linear-gradient(150deg,#8E1424,#33070E)}
+.gal-item:nth-child(3) .gal-ph::before{background:linear-gradient(150deg,#86151B,#2B0609)}
 .gal-item:nth-child(4) .gal-ph::before{background:linear-gradient(150deg,var(--red-600),var(--red-900))}
 .gal-item:nth-child(5) .gal-ph::before{background:linear-gradient(150deg,#4A3A3F,#2A1F22)}
 .gal-ph svg{position:relative; width:34px; height:34px}
@@ -386,7 +386,7 @@ ul.checklist{padding:0; margin-left:0}
 }
 
 /* profesionales */
-.pro-grid{grid-template-columns:repeat(4,1fr)}
+.pro-grid{grid-template-columns:repeat(3,1fr)}
 .pro-card{background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--sh-1); transition:transform .4s var(--ease), box-shadow .4s, border-color .3s}
 .pro-card:hover{transform:translateY(-6px); box-shadow:var(--sh-2); border-color:var(--red-200)}
 .pro-photo{position:relative; aspect-ratio:1/1.1; overflow:hidden; background:var(--rose-100)}
@@ -429,7 +429,7 @@ ul.checklist{padding:0; margin-left:0}
 .dark::before{
   content:""; position:absolute; inset:0; pointer-events:none;
   background:
-    radial-gradient(46% 52% at 84% 12%, rgba(196,30,51,.34), transparent 66%),
+    radial-gradient(46% 52% at 84% 12%, rgba(134,21,27,.34), transparent 66%),
     radial-gradient(40% 44% at 8% 92%, rgba(58,47,51,.30), transparent 70%);
 }
 .dark::after{
@@ -458,7 +458,7 @@ ul.checklist{padding:0; margin-left:0}
   background:linear-gradient(160deg,var(--red-600),var(--red-900));
   box-shadow:var(--sh-2); transition:transform .45s var(--ease), box-shadow .45s;
 }
-.feat:nth-child(2){background:linear-gradient(160deg,#A0172A,#3A070F)}
+.feat:nth-child(2){background:linear-gradient(160deg,#86151B,#2B0609)}
 .feat:nth-child(3){background:linear-gradient(160deg,#4A3A3F,#1F1518)}
 .feat::before{
   content:""; position:absolute; inset:0; z-index:-1; opacity:.9;
@@ -480,10 +480,10 @@ ul.checklist{padding:0; margin-left:0}
 .stage:hover .photo img{transform:scale(1.06)}
 .stage .photo .ph{position:absolute; inset:0; display:grid; place-items:center; color:#fff}
 .stage .photo .ph::before{content:""; position:absolute; inset:0}
-.stage:nth-child(1) .photo .ph::before{background:linear-gradient(150deg,#DC2B41,#5C0D18)}
-.stage:nth-child(2) .photo .ph::before{background:linear-gradient(150deg,#A0172A,#3A070F)}
+.stage:nth-child(1) .photo .ph::before{background:linear-gradient(150deg,#BE2730,#4A0C11)}
+.stage:nth-child(2) .photo .ph::before{background:linear-gradient(150deg,#86151B,#2B0609)}
 .stage:nth-child(3) .photo .ph::before{background:linear-gradient(150deg,#4A3A3F,#1F1518)}
-.stage:nth-child(4) .photo .ph::before{background:linear-gradient(150deg,#8E1424,#33070E)}
+.stage:nth-child(4) .photo .ph::before{background:linear-gradient(150deg,#86151B,#2B0609)}
 .stage .photo .ph svg{position:relative; width:64px; height:64px; opacity:.95; filter:drop-shadow(0 12px 22px rgba(0,0,0,.3))}
 .stage .photo .ph .rings{position:absolute; inset:0; opacity:.3;
   background-image:radial-gradient(circle at 50% 50%, transparent 28%, rgba(255,255,255,.35) 28.5%, transparent 29.5%, transparent 42%, rgba(255,255,255,.25) 42.5%, transparent 43.5%)}
@@ -522,8 +522,8 @@ ul.checklist{padding:0; margin-left:0}
 .house-in{position:relative; width:76%; transform-style:preserve-3d; animation:bob 8s ease-in-out infinite; transition:transform .8s var(--ease)}
 @keyframes bobH{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .house-in{animation-name:bobH}
-.house-in svg{filter:drop-shadow(0 40px 50px rgba(92,13,24,.35))}
-.house-scene .shadow{position:absolute; bottom:8%; width:52%; aspect-ratio:3.4/1; border-radius:50%; background:radial-gradient(ellipse,rgba(92,13,24,.26),transparent 68%); filter:blur(9px)}
+.house-in svg{filter:drop-shadow(0 40px 50px rgba(74,12,17,.35))}
+.house-scene .shadow{position:absolute; bottom:8%; width:52%; aspect-ratio:3.4/1; border-radius:50%; background:radial-gradient(ellipse,rgba(74,12,17,.26),transparent 68%); filter:blur(9px)}
 .house-scene .chip3d--h1{top:6%; left:2%}
 .house-scene .chip3d--h2{bottom:14%; right:0}
 
@@ -539,12 +539,12 @@ ul.checklist{padding:0; margin-left:0}
 
 /* mapa */
 .map-card{border-radius:var(--r-xl); overflow:hidden; border:1px solid var(--line); box-shadow:var(--sh-2); background:var(--rose-100); position:relative; min-height:390px; height:100%}
-.map-card iframe{width:100%; height:100%; min-height:390px; border:0; display:block}
-.map-ph{position:absolute; inset:0; display:grid; place-items:center; align-content:center; gap:10px; color:var(--red-700);
+.map-card iframe{position:relative; z-index:1; width:100%; height:100%; min-height:390px; border:0; display:block; background:transparent}
+.map-ph{position:absolute; inset:0; z-index:0; display:grid; place-items:center; align-content:center; gap:10px; color:var(--red-700);
   text-align:center; font-size:.86rem; font-weight:600; padding:20px; background-color:#F7EBED;
   background-image:
-    linear-gradient(rgba(160,23,42,.09) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(160,23,42,.09) 1px,transparent 1px);
+    linear-gradient(rgba(134,21,27,.09) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(134,21,27,.09) 1px,transparent 1px);
   background-size:34px 34px,34px 34px}
 .map-ph b{font-family:Manrope,sans-serif; font-size:1.08rem; color:var(--ink); letter-spacing:-.02em}
 .map-ph span:not(.itile){max-width:30ch; line-height:1.55; color:var(--ink-soft); font-weight:500}
@@ -727,7 +727,7 @@ ul.checklist{padding:0; margin-left:0}
 <header class="hdr" id="hdr">
   <div class="wrap">
     <a href="#inicio" class="logo" aria-label="Policlínica Sanitas — inicio">
-      <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cross"/></svg></span>
+      <img class="logo-mark" src="fotos/logo.jpeg" alt="" width="40" height="40" decoding="async">
       <span class="logo-txt"><b>SANITAS</b><span>Policlínica</span></span>
     </a>
 
@@ -810,9 +810,9 @@ ul.checklist{padding:0; margin-left:0}
           <svg class="ill" viewBox="0 0 200 190">
             <defs>
               <radialGradient id="hg" cx="34%" cy="26%" r="82%">
-                <stop offset="0" stop-color="#FF8E9D"/>
-                <stop offset=".42" stop-color="#D8283D"/>
-                <stop offset="1" stop-color="#7D1220"/>
+                <stop offset="0" stop-color="#FF9AA0"/>
+                <stop offset=".42" stop-color="#C0242E"/>
+                <stop offset="1" stop-color="#661017"/>
               </radialGradient>
               <linearGradient id="hs" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#fff" stop-opacity=".85"/>
@@ -852,9 +852,9 @@ ul.checklist{padding:0; margin-left:0}
         <div class="particles">
           <i style="width:7px;height:7px;top:16%;left:22%;animation-delay:0s"></i>
           <i style="width:5px;height:5px;top:64%;left:14%;animation-delay:1.6s"></i>
-          <i style="width:8px;height:8px;top:78%;left:72%;animation-delay:3.1s;background:#A0172A"></i>
+          <i style="width:8px;height:8px;top:78%;left:72%;animation-delay:3.1s;background:#86151B"></i>
           <i style="width:5px;height:5px;top:24%;left:82%;animation-delay:2.2s"></i>
-          <i style="width:6px;height:6px;top:46%;left:6%;animation-delay:4.4s;background:#A0172A"></i>
+          <i style="width:6px;height:6px;top:46%;left:6%;animation-delay:4.4s;background:#86151B"></i>
           <i style="width:4px;height:4px;top:88%;left:40%;animation-delay:.8s"></i>
         </div>
       </div>
@@ -925,7 +925,7 @@ ul.checklist{padding:0; margin-left:0}
           <svg class="emblem ill" viewBox="0 0 120 120" aria-hidden="true" data-emblem>
             <defs>
               <linearGradient id="eg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F6C9CF"/>
+                <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F4CBCE"/>
               </linearGradient>
             </defs>
             <rect x="18" y="18" width="84" height="84" rx="24" fill="none" stroke="url(#eg)" stroke-width="2" opacity=".55"/>
@@ -959,7 +959,7 @@ ul.checklist{padding:0; margin-left:0}
     <div class="gal">
       <figure class="gal-item gal-item--lg" data-reveal style="--d:0ms">
         <span class="gal-ph"><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg></span>
-        <img class="photo-img" src="fotos/fachada.jpg" alt="Fachada de la Policlínica Sanitas en Lambaré" loading="lazy" decoding="async" width="900" height="700" onerror="this.remove()">
+        <img class="photo-img" src="fotos/fachada.jpg" alt="Fachada de la Policlínica Sanitas en Lambaré" loading="eager" decoding="async" width="900" height="700" onerror="this.remove();var s=document.getElementById('policlinica');if(s)s.hidden=true">
         <figcaption>Fachada</figcaption>
       </figure>
       <figure class="gal-item" data-reveal style="--d:70ms">
@@ -1074,7 +1074,7 @@ ul.checklist{padding:0; margin-left:0}
       <div class="scene" style="aspect-ratio:1/1;max-width:480px;margin-inline:auto" aria-hidden="true">
         <div class="scene-in" data-tilt>
           <div class="glow"></div>
-          <div class="ring ring--a" style="border-color:rgba(196,30,51,.22)"><i style="background:radial-gradient(circle at 35% 30%,#fff,#C41E33);box-shadow:0 0 14px rgba(196,30,51,.9)"></i></div>
+          <div class="ring ring--a" style="border-color:rgba(134,21,27,.22)"><i style="background:radial-gradient(circle at 35% 30%,#fff,#9E1A21);box-shadow:0 0 14px rgba(134,21,27,.9)"></i></div>
           <div class="ring ring--b"></div>
           <div class="pedestal"></div>
           <div class="heart-wrap" style="width:44%">
@@ -1238,14 +1238,14 @@ ul.checklist{padding:0; margin-left:0}
     <div data-reveal style="--d:120ms">
       <div class="scene" style="aspect-ratio:1/.92" aria-hidden="true">
         <div class="scene-in" data-tilt>
-          <div class="glow" style="background:radial-gradient(circle at 50% 45%, rgba(196,30,51,.30), rgba(58,47,51,.08) 52%, transparent 70%)"></div>
+          <div class="glow" style="background:radial-gradient(circle at 50% 45%, rgba(134,21,27,.30), rgba(58,47,51,.08) 52%, transparent 70%)"></div>
           <div class="ring ring--a" style="border-color:rgba(255,255,255,.2)"><i></i></div>
           <div class="ring ring--c" style="border-color:rgba(255,255,255,.12)"></div>
           <div class="heart-wrap" style="width:46%;top:46%">
             <svg class="ill" viewBox="0 0 200 200">
               <defs>
                 <radialGradient id="mg" cx="34%" cy="26%" r="82%">
-                  <stop offset="0" stop-color="#FF9AA6"/><stop offset=".45" stop-color="#D8283D"/><stop offset="1" stop-color="#6B0E1A"/>
+                  <stop offset="0" stop-color="#FF9AA0"/><stop offset=".45" stop-color="#C0242E"/><stop offset="1" stop-color="#4A0C11"/>
                 </radialGradient>
               </defs>
               <circle cx="100" cy="100" r="76" fill="url(#mg)"/>
@@ -1270,10 +1270,10 @@ ul.checklist{padding:0; margin-left:0}
         <div class="house-in" data-tilt>
           <svg class="ill" viewBox="0 0 220 200" aria-hidden="true">
             <defs>
-              <linearGradient id="roofA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0455A"/><stop offset="1" stop-color="#A0172A"/></linearGradient>
-              <linearGradient id="roofB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A0172A"/><stop offset="1" stop-color="#3A070F"/></linearGradient>
-              <linearGradient id="wallA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FAE3E7"/></linearGradient>
-              <linearGradient id="wallB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F0DBDF"/><stop offset="1" stop-color="#DBC0C5"/></linearGradient>
+              <linearGradient id="roofA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#BE2730"/><stop offset="1" stop-color="#86151B"/></linearGradient>
+              <linearGradient id="roofB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86151B"/><stop offset="1" stop-color="#2B0609"/></linearGradient>
+              <linearGradient id="wallA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F9E5E7"/></linearGradient>
+              <linearGradient id="wallB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F2DDE0"/><stop offset="1" stop-color="#DCC2C6"/></linearGradient>
             </defs>
             <!-- lateral -->
             <path d="M150 100l32-18v80l-32 18z" fill="url(#wallB)"/>
@@ -1284,15 +1284,15 @@ ul.checklist{padding:0; margin-left:0}
             <!-- techo frontal -->
             <path d="M45 102 102.5 55 160 102z" fill="url(#roofA)"/>
             <!-- ventanas -->
-            <rect x="68" y="120" width="21" height="21" rx="4" fill="#DC2B41" opacity=".26"/>
-            <rect x="116" y="120" width="21" height="21" rx="4" fill="#DC2B41" opacity=".18"/>
-            <rect x="159" y="105" width="14" height="20" rx="4" fill="#5C0D18" opacity=".16"/>
+            <rect x="68" y="120" width="21" height="21" rx="4" fill="#BE2730" opacity=".26"/>
+            <rect x="116" y="120" width="21" height="21" rx="4" fill="#BE2730" opacity=".18"/>
+            <rect x="159" y="105" width="14" height="20" rx="4" fill="#4A0C11" opacity=".16"/>
             <!-- puerta -->
-            <path d="M92 180v-26a10.5 10.5 0 0 1 21 0v26z" fill="#5C0D18" opacity=".22"/>
+            <path d="M92 180v-26a10.5 10.5 0 0 1 21 0v26z" fill="#4A0C11" opacity=".22"/>
             <!-- cruz -->
-            <path d="M97 69h11v9h9v11h-9v9H97v-9h-9V78h9z" fill="#C41E33"/>
+            <path d="M97 69h11v9h9v11h-9v9H97v-9h-9V78h9z" fill="#fff" opacity=".95"/>
             <!-- piso -->
-            <path d="M40 180h145" stroke="#5C0D18" stroke-opacity=".18" stroke-width="3" stroke-linecap="round"/>
+            <path d="M40 180h145" stroke="#4A0C11" stroke-opacity=".18" stroke-width="3" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="chip3d chip3d--h1"><span class="b"><svg class="ico" aria-hidden="true"><use href="#i-stetho"/></svg></span><span>Atención a domicilio<small>zonas cercanas de Lambaré</small></span></div>
@@ -1367,7 +1367,14 @@ ul.checklist{padding:0; margin-left:0}
          { foto:'fotos/equipo/ana-gimenez.jpg', nombre:'Dra. Ana Giménez',
            especialidad:'Ginecología y Obstetricia', registro:'Reg. Prof. 12345',
            formacion:'Universidad Nacional de Asunción' }                          */
-      window.SANITAS_PROFESIONALES = [];
+      window.SANITAS_PROFESIONALES = [
+        { foto:'fotos/equipo/ginecologia-obstetricia.jpeg', especialidad:'Ginecología y Obstetricia' },
+        { foto:'fotos/equipo/traumatologia.jpeg',           especialidad:'Traumatología' },
+        { foto:'fotos/equipo/medicina-familiar.jpeg',       especialidad:'Medicina Familiar' },
+        { foto:'fotos/equipo/pediatria.jpeg',               especialidad:'Pediatría' },
+        { foto:'fotos/equipo/psicologia.jpeg',              especialidad:'Psicología' },
+        { foto:'fotos/equipo/nutricion.jpeg',               especialidad:'Nutrición' }
+      ];
     </script>
 
     <div class="center" style="margin-top:34px" data-reveal>
@@ -1484,7 +1491,7 @@ ul.checklist{padding:0; margin-left:0}
     <div class="ftr-grid">
       <div>
         <a href="#inicio" class="logo" aria-label="Policlínica Sanitas — inicio">
-          <span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cross"/></svg></span>
+          <img class="logo-mark" src="fotos/logo.jpeg" alt="" width="40" height="40" decoding="async">
           <span class="logo-txt"><b>SANITAS</b><span>Policlínica</span></span>
         </a>
         <p class="ftr-claim">“Cuidamos de vos y de tu familia.”</p>
@@ -1651,10 +1658,6 @@ ul.checklist{padding:0; margin-left:0}
     f.loading = 'lazy';
     f.referrerPolicy = 'no-referrer-when-downgrade';
     f.allowFullscreen = true;
-    f.addEventListener('load', function(){
-      var ph = mapCard.querySelector('.map-ph');
-      if(ph) ph.style.display = 'none';
-    });
     mapCard.appendChild(f);
   }
   if(mapCard){
@@ -1682,7 +1685,8 @@ ul.checklist{padding:0; margin-left:0}
         var img = document.createElement('img');
         img.className = 'photo-img';
         img.src = pro.foto;
-        img.alt = 'Retrato de ' + (pro.nombre || 'profesional de la Policlínica Sanitas');
+        img.alt = pro.nombre ? 'Retrato de ' + pro.nombre
+                 : 'Profesional de ' + (pro.especialidad || 'la Policlínica Sanitas') + ' en la Policlínica Sanitas';
         img.loading = 'lazy'; img.decoding = 'async';
         img.onerror = function(){ img.remove(); };
         photo.appendChild(img);
@@ -1691,8 +1695,10 @@ ul.checklist{padding:0; margin-left:0}
 
       var body = document.createElement('div');
       body.className = 'pro-body';
-      var h = document.createElement('h3'); h.textContent = pro.nombre || ''; body.appendChild(h);
-      if(pro.especialidad){
+      var h = document.createElement('h3');
+      h.textContent = pro.nombre || pro.especialidad || '';
+      body.appendChild(h);
+      if(pro.nombre && pro.especialidad){
         var e = document.createElement('p'); e.className = 'pro-esp';
         e.textContent = pro.especialidad; body.appendChild(e);
       }
@@ -1704,7 +1710,9 @@ ul.checklist{padding:0; margin-left:0}
       var a = document.createElement('a');
       a.className = 'card-link'; a.target = '_blank'; a.rel = 'noopener';
       a.href = WA + encodeURIComponent('Hola, quiero agendar una consulta' +
-        (pro.nombre ? ' con ' + pro.nombre : '') + ' en la Policlínica Sanitas.');
+        (pro.nombre ? ' con ' + pro.nombre
+                    : pro.especialidad ? ' de ' + pro.especialidad : '') +
+        ' en la Policlínica Sanitas.');
       a.innerHTML = 'Agendar consulta <svg aria-hidden="true"><use href="#i-arrow"/></svg>';
       body.appendChild(a);
 
