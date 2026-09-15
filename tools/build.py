@@ -18,7 +18,7 @@ TEL = '595982420735'
 TEL_VISIBLE = '0982 420 735'
 DIR1 = 'Fulgencio Yegros 872 casi Río Bermejo'
 DIR2 = 'Barrio Valle Apua — Lambaré, Paraguay'
-HORARIO = 'Lunes a domingo, de 09:00 a 20:00 hs'
+HORARIO = 'Lunes a sábado, de 09:00 a 20:00 hs'
 LAT, LNG = '-25.3465404', '-57.6000046'
 
 def wa(msg):
@@ -391,7 +391,7 @@ def jsonld(extra=''):
   "telephone":"+%s",
   "openingHoursSpecification":[{
     "@type":"OpeningHoursSpecification",
-    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
     "opens":"09:00","closes":"20:00"
   }],
   "availableService":[
@@ -546,7 +546,7 @@ def pagina_index():
         <div class="chip3d chip3d--1"><span class="b"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span><span>{len(PROFESIONALES)} profesionales<small>distintas especialidades</small></span></div>
         <div class="chip3d chip3d--2"><span class="b"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span><span>Laboratorio<small>en la policlínica</small></span></div>
         <div class="chip3d chip3d--3"><span class="b"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span><span>Atención a domicilio<small>zonas cercanas de Lambaré</small></span></div>
-        <div class="chip3d chip3d--4"><span class="b"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span>09:00 — 20:00 hs<small>de lunes a domingo</small></span></div>
+        <div class="chip3d chip3d--4"><span class="b"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span>09:00 — 20:00 hs<small>de lunes a sábado</small></span></div>
         <div class="particles">
           <i style="width:7px;height:7px;top:16%;left:22%"></i>
           <i style="width:5px;height:5px;top:64%;left:14%;animation-delay:1.6s"></i>
@@ -568,8 +568,8 @@ def pagina_index():
       </article>
       <article class="card" data-reveal style="--d:90ms">
         <span class="itile itile--soft"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span>
-        <h3>Lunes a domingo</h3>
-        <p>De 09:00 a 20:00 hs, también los fines de semana.</p>
+        <h3>Lunes a sábado</h3>
+        <p>De 09:00 a 20:00 hs, también los sábados.</p>
       </article>
       <article class="card" data-reveal style="--d:180ms">
         <span class="itile itile--accent"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span>
@@ -678,7 +678,7 @@ def pagina_index():
       <div class="glass"><span class="itile"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></span><h3>Con la orden del profesional</h3><p>El médico que te atiende indica qué estudios necesitás.</p></div>
       <div class="glass"><span class="itile"><svg class="ico" aria-hidden="true"><use href="#i-micro"/></svg></span><h3>Análisis clínicos</h3><p>Consultá por los estudios disponibles antes de venir.</p></div>
       <div class="glass"><span class="itile"><svg class="ico" aria-hidden="true"><use href="#i-drop"/></svg></span><h3>Controles de rutina</h3><p>Seguimiento junto al profesional que lleva tu caso.</p></div>
-      <div class="glass"><span class="itile"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><h3>De 09:00 a 20:00 hs</h3><p>Todos los días, también los fines de semana.</p></div>
+      <div class="glass"><span class="itile"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><h3>De 09:00 a 20:00 hs</h3><p>De lunes a sábado, en el mismo horario de la policlínica.</p></div>
     </div>
   </div>
 </section>
@@ -827,7 +827,7 @@ def pagina_especialidad(p):
       </div>
       <div class="hero-mini" data-reveal style="--d:300ms">
         <span><svg aria-hidden="true"><use href="#i-check-c"/></svg> Atención en Lambaré</span>
-        <span><svg aria-hidden="true"><use href="#i-check-c"/></svg> Lunes a domingo, 09:00 a 20:00 hs</span>
+        <span><svg aria-hidden="true"><use href="#i-check-c"/></svg> Lunes a sábado, 09:00 a 20:00 hs</span>
       </div>
     </div>
     <div data-reveal style="--d:140ms">
