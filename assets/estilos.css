@@ -698,3 +698,23 @@ ul.checklist{padding:0; margin-left:0}
 @media (max-width:1080px){ .datos-grid{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:900px){ .pasos{grid-template-columns:1fr} }
 @media (max-width:760px){ .datos-grid{grid-template-columns:1fr} }
+
+/* ============================================================
+   Logo horizontal
+   ============================================================ */
+.logo-full{
+  display:block; height:46px; width:auto; border-radius:0; background:none;
+  transition:height .35s var(--ease);
+}
+.hdr.stuck .logo-full{height:38px}
+.logo:hover .logo-full{transform:none}
+/* el footer es oscuro: la marca va sobre una placa blanca */
+.logo-plate{
+  display:inline-block; padding:10px 14px; border-radius:14px; background:#fff;
+  box-shadow:0 10px 26px -16px rgba(0,0,0,.6);
+}
+.logo-plate .logo-full{height:38px}
+@media (max-width:760px){
+  .logo-full{height:38px}
+  .hdr.stuck .logo-full{height:32px}
+}

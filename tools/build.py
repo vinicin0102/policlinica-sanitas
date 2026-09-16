@@ -136,7 +136,7 @@ def head(titulo, descripcion, base, canonical):
 <meta property="og:title" content="{e(titulo)}">
 <meta property="og:description" content="{e(descripcion)}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="{base}fotos/logo.jpeg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2386151B'/%3E%3Cpath d='M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap">
@@ -162,14 +162,13 @@ def header(base):
     return f'''<header class="hdr" id="hdr">
   <div class="wrap">
     <a href="{ini or '#inicio'}" class="logo" aria-label="Policlínica Sanitas — inicio">
-      <img class="logo-mark" src="{base}fotos/logo.jpeg" alt="" width="40" height="40" decoding="async">
-      <span class="logo-txt"><b>SANITAS</b><span>Policlínica</span></span>
+      <img class="logo-full" src="{base}fotos/logo.jpeg" alt="Policlínica Sanitas" width="243" height="100" decoding="async">
     </a>
     <nav class="nav" id="nav" aria-label="Navegación principal">
 {links}
     </nav>
     <div class="hdr-cta">
-      <a class="btn btn--brand" href="{cta}" target="_blank" rel="noopener">
+      <a class="btn btn--wa" href="{cta}" target="_blank" rel="noopener">
         <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar por WhatsApp
       </a>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav">
@@ -181,7 +180,7 @@ def header(base):
 
 <div class="mnav" id="mnav">
 {mlinks}
-  <a class="btn btn--brand btn--block" href="{cta}" target="_blank" rel="noopener">
+  <a class="btn btn--wa btn--block" href="{cta}" target="_blank" rel="noopener">
     <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar por WhatsApp
   </a>
 </div>
@@ -218,7 +217,7 @@ def turnos(base=''):
       <a href="{ini}#domicilio" style="color:var(--red-700);font-weight:600">Ver atención a domicilio</a></span>
     </div>
     <div class="center" style="margin-top:34px" data-reveal>
-      <a class="btn btn--brand btn--lg" href="{wa('quiero pedir un turno en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
+      <a class="btn btn--wa btn--lg" href="{wa('quiero pedir un turno en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
         <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Pedir un turno por WhatsApp
       </a>
     </div>
@@ -266,7 +265,7 @@ def ubicacion(con_cobertura=True):
           <a class="btn btn--brand btn--lg" href="https://www.google.com/maps/dir/?api=1&amp;destination={LAT}%2C{LNG}" target="_blank" rel="noopener">
             <svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg> Cómo llegar
           </a>
-          <a class="btn btn--ghost btn--lg" href="{wa('quiero consultar disponibilidad en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
+          <a class="btn btn--wa btn--lg" href="{wa('quiero consultar disponibilidad en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
             <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar por WhatsApp
           </a>
         </div>{cobertura}
@@ -325,8 +324,7 @@ def footer(base):
     <div class="ftr-grid">
       <div>
         <a href="{ini or '#inicio'}" class="logo" aria-label="Policlínica Sanitas — inicio">
-          <img class="logo-mark" src="{base}fotos/logo.jpeg" alt="" width="40" height="40" decoding="async">
-          <span class="logo-txt"><b>SANITAS</b><span>Policlínica</span></span>
+          <span class="logo-plate"><img class="logo-full" src="{base}fotos/logo.jpeg" alt="Policlínica Sanitas" width="243" height="100" decoding="async"></span>
         </a>
         <p class="ftr-claim">Policlínica en Lambaré. Consultas de distintas especialidades, estudios y laboratorio en el mismo lugar.</p>
       </div>
@@ -343,7 +341,7 @@ def footer(base):
           <div><svg aria-hidden="true"><use href="#i-clock"/></svg><span>{HORARIO}</span></div>
           <div><svg aria-hidden="true"><use href="#i-wa"/></svg><span><a href="{enlace}" target="_blank" rel="noopener">{TEL_VISIBLE}</a></span></div>
         </div>
-        <a class="btn btn--brand" style="margin-top:22px" href="{enlace}" target="_blank" rel="noopener">
+        <a class="btn btn--wa" style="margin-top:22px" href="{enlace}" target="_blank" rel="noopener">
           <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar por WhatsApp
         </a>
       </div>
@@ -507,7 +505,7 @@ def pagina_index():
         <a class="btn btn--brand btn--lg" href="#profesionales">
           <svg class="ico" aria-hidden="true"><use href="#i-users"/></svg> Ver profesionales
         </a>
-        <a class="btn btn--ghost btn--lg" href="{wa('quiero consultar disponibilidad en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
+        <a class="btn btn--wa btn--lg" href="{wa('quiero consultar disponibilidad en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
           <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar disponibilidad
         </a>
       </div>
@@ -629,7 +627,7 @@ def pagina_index():
 {estudios}
       </div>
       <div class="btn-row" style="margin-top:30px">
-        <a class="btn btn--brand" href="{wa('quiero consultar por un estudio en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
+        <a class="btn btn--wa" href="{wa('quiero consultar por un estudio en la Policlínica Sanitas.')}" target="_blank" rel="noopener">
           <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar por un estudio
         </a>
       </div>
@@ -725,7 +723,7 @@ def pagina_index():
         <li><svg aria-hidden="true"><use href="#i-check-c"/></svg> La disponibilidad depende de tu zona</li>
       </ul>
       <div class="btn-row" style="margin-top:32px">
-        <a class="btn btn--brand btn--lg" href="{wa('quiero consultar por atención a domicilio. Mi zona es:')}" target="_blank" rel="noopener">
+        <a class="btn btn--wa btn--lg" href="{wa('quiero consultar por atención a domicilio. Mi zona es:')}" target="_blank" rel="noopener">
           <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar atención a domicilio
         </a>
       </div>
@@ -820,7 +818,7 @@ def pagina_especialidad(p):
       <p class="hero-sub" data-reveal style="--d:120ms">{e(p['intro'])}</p>
       <p class="hero-note" data-reveal style="--d:180ms">{DIR1}, Barrio Valle Apua. {HORARIO}.</p>
       <div class="btn-row" data-reveal style="--d:240ms">
-        <a class="btn btn--brand btn--lg" href="{enlace}" target="_blank" rel="noopener">
+        <a class="btn btn--wa btn--lg" href="{enlace}" target="_blank" rel="noopener">
           <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Consultar disponibilidad
         </a>
         <a class="btn btn--ghost btn--lg" href="#motivos">Ver motivos de consulta <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
