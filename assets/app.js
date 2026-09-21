@@ -100,8 +100,16 @@
     var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
     if(!a) return;
     var href = a.getAttribute('href') || '';
-    var sec = a.closest ? a.closest('section') : null;
-    var seccion = (sec && sec.id) || 'general';
+    var seccion = 'general';
+    if(a.closest){
+      var sec = a.closest('section');
+      if(a.classList.contains('wa-float')) seccion = 'boton-flotante';
+      else if(a.closest('.wa-bar'))        seccion = 'barra-mobile';
+      else if(a.closest('.hdr'))           seccion = 'header';
+      else if(a.closest('.mnav'))          seccion = 'menu-mobile';
+      else if(a.closest('.ftr'))           seccion = 'footer';
+      else if(sec && sec.id)               seccion = sec.id;
+    }
     if(href.indexOf('https://wa.me/') === 0){
       evento('Contact', 'contacto_whatsapp', {seccion: seccion});
     } else if(href.indexOf('google.com/maps') > -1){

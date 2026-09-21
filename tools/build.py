@@ -514,7 +514,7 @@ def pagina_index():
         '', '') + header('') + f'''
 <main id="inicio">
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="badge" data-reveal><i class="dot"></i> Policlínica Sanitas · Lambaré</span>
@@ -629,7 +629,7 @@ def pagina_index():
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="motivos">
   <div class="wrap">
     <div class="sec-head center" data-reveal>
       <span class="eyebrow">Motivos de consulta</span>
@@ -682,7 +682,7 @@ def pagina_index():
   </div>
 </section>
 
-<section class="sec dark">
+<section class="sec dark" id="laboratorio">
   <div class="wrap split">
     <div data-reveal>
       <span class="eyebrow">Servicio</span>
@@ -835,7 +835,7 @@ def pagina_especialidad(p):
         base, 'especialidades/%s/' % p['slug']) + header(base) + f'''
 <main id="inicio">
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <a class="volver" href="{base}index.html"><svg aria-hidden="true"><use href="#i-arrow"/></svg> Todas las especialidades</a>

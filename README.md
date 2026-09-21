@@ -102,12 +102,23 @@ build, y este sitio se sube ya generado.
 | Evento (Meta) | Cuándo | Dato que viaja |
 |---|---|---|
 | `PageView` | Al abrir cualquier página | — |
-| `Contact` | Al tocar cualquier botón de WhatsApp | La sección: `hero`, `profesionales`, `turnos`, `ubicacion`… |
+| `Contact` | Al tocar cualquier botón de WhatsApp | De dónde salió el clic (ver abajo) |
 | `FindLocation` | Al tocar «Cómo llegar» | La sección |
 | `ViewContent` | Al abrir una página de especialidad | El slug de la especialidad |
 
 Los eventos están en `assets/app.js` y se disparan por delegación: cualquier
 botón de WhatsApp que se agregue después queda medido solo, sin tocar nada.
+
+En la página principal hay **33 botones de WhatsApp** y los 33 mandan
+`Contact`, cada uno con su origen:
+
+`hero` · `profesionales` · `especialidades` · `motivos` · `estudios` ·
+`laboratorio` · `domicilio` · `turnos` · `ubicacion` · `contacto` ·
+`header` · `menu-mobile` · `footer` · `boton-flotante` · `barra-mobile`
+
+Sirve para ver dónde convierte la gente: si escriben apenas entran, si
+esperan a ver los profesionales, o si el que trabaja es el botón flotante.
+Si aparece `general`, es una sección nueva a la que le falta el `id`.
 
 **No se envía el motivo de consulta ni el síntoma.** Los botones de «Ansiedad»,
 «Depresión» o «Control ginecológico» disparan `Contact` con la sección, nunca
