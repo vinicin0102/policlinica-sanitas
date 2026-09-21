@@ -21,6 +21,26 @@ DIR2 = 'Barrio Valle Apua — Lambaré, Paraguay'
 HORARIO = 'Lunes a sábado, de 09:00 a 20:00 hs'
 LAT, LNG = '-25.3465404', '-57.6000046'
 
+# Píxel de Meta (Facebook / Instagram). El ID no es secreto: cualquiera lo ve
+# en el código de la página. Se puede pisar con la variable de entorno
+# META_PIXEL_ID al generar; vacío = ninguna página lleva píxel.
+META_PIXEL_ID = os.environ.get('META_PIXEL_ID', '1935288991149327').strip()
+
+def pixel():
+    if not META_PIXEL_ID:
+        return ''
+    return '''<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','%s');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1"></noscript>''' % (
+        META_PIXEL_ID, META_PIXEL_ID)
+
 def wa(msg):
     return 'https://wa.me/%s?text=%s' % (TEL, quote('Hola, %s' % msg, safe=''))
 
@@ -141,6 +161,7 @@ def head(titulo, descripcion, base, canonical):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap">
 <link rel="stylesheet" href="{base}assets/estilos.css">
+{pixel()}
 </head>
 <body>
 
@@ -405,6 +426,10 @@ def cierre(base, extra_ld=''):
 </body>
 </html>
 '''
+
+def cierre_especialidad(base, pagina):
+    marca = ('<script>window.SANITAS_PAGINA = %r;</script>\n' % pagina)
+    return marca + cierre(base)
 
 # ------------------------------------------------------------ profesionales ----
 def tarjeta_pro(p, base='', delay=0):
@@ -855,7 +880,7 @@ def pagina_especialidad(p):
 </section>
 {estudios}''' + turnos(base) + ubicacion(con_cobertura=False) + cta_final(
         'Escribinos contando tu caso y te confirmamos el horario disponible de %s.' % p['esp'].lower()
-    ) + '\n</main>\n' + cierre(base)
+    ) + '\n</main>\n' + cierre_especialidad(base, p['slug'])
 
 ESTUDIOS_ICO = [(n, ico) for ico, n, _ in ESTUDIOS] + [('Laboratorio', 'i-flask')]
 

@@ -80,6 +80,47 @@ El verde aparece sólo con función propia: los tildes de confirmación y el
 botón flotante de WhatsApp, que se deja verde porque es el color con el que
 la gente reconoce ese canal.
 
+## Píxel de Meta y eventos
+
+El píxel de Meta (Facebook / Instagram) está en las ocho páginas, con el ID
+**1935288991149327**. Se declara en `tools/build.py`, en `META_PIXEL_ID`, y se
+puede pisar al generar sin tocar el código:
+
+```bash
+META_PIXEL_ID=otro-id python3 tools/build.py
+META_PIXEL_ID= python3 tools/build.py   # vacío: ninguna página lleva píxel
+```
+
+El ID de un píxel no es un dato secreto: viaja en el HTML y cualquiera lo ve
+en el código fuente de la página. Por eso va directo en el generador y no
+hace falta una variable de entorno en el hosting. Las variables de Vercel,
+además, no llegan solas a un sitio estático: sólo existen durante un paso de
+build, y este sitio se sube ya generado.
+
+### Eventos que se envían
+
+| Evento (Meta) | Cuándo | Dato que viaja |
+|---|---|---|
+| `PageView` | Al abrir cualquier página | — |
+| `Contact` | Al tocar cualquier botón de WhatsApp | La sección: `hero`, `profesionales`, `turnos`, `ubicacion`… |
+| `FindLocation` | Al tocar «Cómo llegar» | La sección |
+| `ViewContent` | Al abrir una página de especialidad | El slug de la especialidad |
+
+Los eventos están en `assets/app.js` y se disparan por delegación: cualquier
+botón de WhatsApp que se agregue después queda medido solo, sin tocar nada.
+
+**No se envía el motivo de consulta ni el síntoma.** Los botones de «Ansiedad»,
+«Depresión» o «Control ginecológico» disparan `Contact` con la sección, nunca
+con el texto del botón: son datos de salud y las políticas de Meta prohíben
+recibirlos. Tenerlo en cuenta antes de agregar parámetros nuevos.
+
+Si el píxel está bloqueado (adblock, sin conexión, consentimiento rechazado),
+las llamadas se saltean y la página sigue funcionando igual.
+
+Para usar además Google Ads o GA4, `assets/app.js` ya llama a `gtag` y a
+`dataLayer` con los mismos eventos: alcanza con agregar la etiqueta de Google
+junto al píxel en `tools/build.py`.
+
 ## Profesionales
 
 Los siete retratos están cargados, **identificados sólo por especialidad**: la

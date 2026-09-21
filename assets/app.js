@@ -83,6 +83,37 @@
     } else { loadMap(); }
   }
 
+  /* ---- eventos para los píxeles de anuncios ----------------------------
+     Se disparan sólo si el píxel está cargado. No se envía el motivo de
+     consulta ni la especialidad: son datos de salud y las plataformas de
+     anuncios prohíben recibirlos. Sólo viaja la sección de la página.      */
+  function evento(nombreMeta, nombreGoogle, datos){
+    try{
+      if(typeof window.fbq === 'function') window.fbq('track', nombreMeta, datos || {});
+      if(typeof window.gtag === 'function') window.gtag('event', nombreGoogle, datos || {});
+      if(Array.isArray(window.dataLayer)) window.dataLayer.push(
+        Object.assign({event: nombreGoogle}, datos || {}));
+    }catch(err){ /* nunca romper la página por un píxel */ }
+  }
+
+  document.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    var sec = a.closest ? a.closest('section') : null;
+    var seccion = (sec && sec.id) || 'general';
+    if(href.indexOf('https://wa.me/') === 0){
+      evento('Contact', 'contacto_whatsapp', {seccion: seccion});
+    } else if(href.indexOf('google.com/maps') > -1){
+      evento('FindLocation', 'como_llegar', {seccion: seccion});
+    }
+  }, true);
+
+  /* las páginas por especialidad avisan que se vieron */
+  if(window.SANITAS_PAGINA){
+    evento('ViewContent', 'ver_especialidad', {seccion: window.SANITAS_PAGINA});
+  }
+
   /* ---- link activo en el menú ---- */
   var secs = ['inicio','profesionales','especialidades','estudios','turnos','ubicacion']
     .map(function(id){ return document.getElementById(id); }).filter(Boolean);
